@@ -1,4 +1,4 @@
-
+# Homebrew. Visit: https://brew.sh
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # nvm (Node Version Manager) 
