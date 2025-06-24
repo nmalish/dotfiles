@@ -1,0 +1,21 @@
+# File operations
+alias ll='ls -alF'
+
+# System shortcuts
+alias h='history'
+alias c='clear'
+alias q='exit'
+alias reload='source ~/.zshrc'
+
+# Git shortcuts
+alias gs='git status'
+alias ga='git add'
+alias gc='git commit'
+alias gp='git push'
+alias gl='git log --oneline'
+
+
+# Custom
+alias repos='cd ~/Repos'
+alias projects='cd ~/Projects'
+
