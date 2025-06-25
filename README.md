@@ -15,6 +15,9 @@ Install zsh-autosuggestions:
 Install zsh-syntax-highlighting:
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
+Install eza (better ls) eza is a better version of ls with lots of different options.
+`brew install eza`
+
 
 ## Thanks To
 
