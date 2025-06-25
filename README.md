@@ -8,6 +8,14 @@ Install [Powerlevel10k](https://github.com/romkatv/powerlevel10k?tab=readme-ov-f
 ```
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k"
 ```
+
+
+Install zsh-autosuggestions:
+`git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions`
+Install zsh-syntax-highlighting:
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+
+
 ## Thanks To
 
 I got inspiration from [Typecraft Dev](https://github.com/typecraft-dev/dotfiles) and [Dries Vints](https://github.com/driesvints/dotfiles). Also visit the [GitHub does dotfiles](https://dotfiles.github.io/) project.
