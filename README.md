@@ -4,6 +4,10 @@ This repository serves as my way to help me setup and maintain my Mac. It takes 
 
 Install [ohmyzsh](https://github.com/ohmyzsh/ohmyzsh)
 
+Install [Powerlevel10k](https://github.com/romkatv/powerlevel10k?tab=readme-ov-file#oh-my-zsh)
+```
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k"
+```
 ## Thanks To
 
 I got inspiration from [Typecraft Dev](https://github.com/typecraft-dev/dotfiles) and [Dries Vints](https://github.com/driesvints/dotfiles). Also visit the [GitHub does dotfiles](https://dotfiles.github.io/) project.
