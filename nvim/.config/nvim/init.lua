@@ -673,10 +673,14 @@ require('lazy').setup({
         --    https://github.com/pmizio/typescript-tools.nvim
         --
         -- But for many setups, the LSP (`ts_ls`) will work just fine
-        -- ts_ls = {},
+        ts_ls = {}, -- TypeScript language server
+        svelte = {}, -- Svelte language server
+        tailwindcss = {}, -- Tailwind CSS language server
+        cssls = {}, -- CSS language server
+        html = {}, -- HTML language server
         --
         csharp_ls = {
-          cmd = { '/Users/nmalish/.dotnet/tools/csharp-ls' },
+          cmd = { '/Users/nmalysh/.dotnet/tools/csharp-ls' },
         },
         lua_ls = {
           -- cmd = { ... },
@@ -713,6 +717,10 @@ require('lazy').setup({
         'csharpier', -- Used to format C# code
         'svelte-language-server',
         'typescript-language-server',
+        'tailwindcss-language-server',
+        'css-lsp',
+        'html-lsp',
+        'prettier', -- Used to format TypeScript, JavaScript, CSS, HTML, Svelte
         -- This does not work for some reason, i will try to use cmd csharp_ls
         -- 'csharp-language-server', -- C# language server
       })
@@ -770,6 +778,11 @@ require('lazy').setup({
       formatters_by_ft = {
         lua = { 'stylua' },
         json = { 'jq' },
+        svelte = { 'prettier' },
+        typescript = { 'prettier' },
+        javascript = { 'prettier' },
+        css = { 'prettier' },
+        html = { 'prettier' },
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
         --
@@ -965,7 +978,26 @@ require('lazy').setup({
     main = 'nvim-treesitter.configs', -- Sets main module to use for opts
     -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
     opts = {
-      ensure_installed = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc', 'c_sharp' },
+      ensure_installed = {
+        'bash',
+        'c',
+        'diff',
+        'html',
+        'lua',
+        'luadoc',
+        'markdown',
+        'markdown_inline',
+        'query',
+        'vim',
+        'vimdoc',
+        'c_sharp',
+        'svelte',
+        'typescript',
+        'tsx',
+        'css',
+        'javascript',
+        'json',
+      },
       -- Autoinstall languages that are not installed
       auto_install = true,
       highlight = {
