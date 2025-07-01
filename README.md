@@ -2,21 +2,57 @@
 
 This repository serves as my way to help me setup and maintain my Mac. It takes the effort out of installing everything manually. Everything needed to install my preferred setup of macOS is detailed in this readme. Feel free to explore, learn and copy parts for your own dotfiles. Enjoy!
 
+## Setup
+
+This dotfiles repository uses [GNU Stow](https://www.gnu.org/software/stow/) to manage symlinks for configuration files.
+
+### Prerequisites
+
+Install GNU Stow:
+```bash
+brew install stow
+```
+
+### Installation
+1. Use Stow to symlink the configuration files:
+```bash
+stow .
+```
+
+2. Use Stow + package name to symlink specific package:
+```bash
+stow nvim
+```
+
+This will create symlinks in your home directory pointing to the files in this repository.
+
+## Additional Setup
+
+### Install Oh My Zsh
 Install [ohmyzsh](https://github.com/ohmyzsh/ohmyzsh)
 
+### Install Powerlevel10k
 Install [Powerlevel10k](https://github.com/romkatv/powerlevel10k?tab=readme-ov-file#oh-my-zsh)
-```
+```bash
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k"
 ```
 
-
+### Install Zsh Plugins
 Install zsh-autosuggestions:
-`git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions`
-Install zsh-syntax-highlighting:
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+```bash
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+```
 
-Install eza (better ls) eza is a better version of ls with lots of different options.
-`brew install eza`
+Install zsh-syntax-highlighting:
+```bash
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+```
+
+### Install Additional Tools
+Install eza (better ls) - eza is a better version of ls with lots of different options:
+```bash
+brew install eza
+```
 
 
 ## Thanks To
