@@ -115,3 +115,6 @@ source $ZSH/oh-my-zsh.sh
 
 # ---- Eza (better ls) -----
 alias ls="eza --icons=always"
+
+# ---- Add ~/.local/bin to PATH -----
+export PATH="$HOME/.local/bin:$PATH"

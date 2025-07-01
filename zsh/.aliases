@@ -18,4 +18,5 @@ alias gl='git log --oneline'
 # Custom
 alias repos='cd ~/Repos'
 alias projects='cd ~/Projects'
+alias dev='tmux-dev-session.sh'
 
