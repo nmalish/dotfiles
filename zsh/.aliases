@@ -14,9 +14,12 @@ alias gc='git commit'
 alias gp='git push'
 alias gl='git log --oneline'
 
+# Shell Tools
+alias cd='z'
 
 # Custom
 alias repos='cd ~/Repos'
 alias projects='cd ~/Projects'
 alias dev='tmux-dev-session.sh'
+
 

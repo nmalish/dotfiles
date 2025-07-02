@@ -118,3 +118,6 @@ alias ls="eza --icons=always"
 
 # ---- Add ~/.local/bin to PATH -----
 export PATH="$HOME/.local/bin:$PATH"
+
+# Zoxide
+eval "$(zoxide init zsh)"

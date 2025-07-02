@@ -49,11 +49,17 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 ```
 
 ### Install Additional Tools
+Eza
 Install eza (better ls) - eza is a better version of ls with lots of different options:
 ```bash
 brew install eza
 ```
 
+Zoxide 
+Zoxide is a replacement for cd. It remembers the directories you've been in, so you can more easily jump to them next time. Say you do cd ~/.local/share/omakub once. Next time, you can just do cd omakub, and Zoxide will take you directly there.
+```bash
+brew install zoxide
+```
 
 ## Thanks To
 
