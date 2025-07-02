@@ -1,0 +1,44 @@
+{
+  "mcpServers": {
+    "bitbucket": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@aashari/mcp-server-atlassian-bitbucket"
+      ]
+    }
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash|Edit|MultiEdit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "osascript -e 'display notification \"Claude Code requesting permission to execute command\" with title \"Claude Code Permission Request\" sound name \"Glass\"'"
+          }
+        ]
+      },
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "check-commit-message.sh"
+          }
+        ]
+      }
+    ],
+    "Notification": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "osascript -e 'display notification \"Claude Code is waiting for input\" with title \"Claude Code Idle\" sound name \"Ping\"'"
+          }
+        ]
+      }
+    ]
+  }
+}

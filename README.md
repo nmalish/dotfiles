@@ -67,3 +67,7 @@ I got inspiration from [Typecraft Dev](https://github.com/typecraft-dev/dotfiles
 
 
 In general, I'd like to thank every single one who open-sources their dotfiles for their effort to contribute something to the open-source community.
+
+
+
+
