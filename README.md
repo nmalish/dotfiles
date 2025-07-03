@@ -49,13 +49,16 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 ```
 
 ### Install Additional Tools
-Eza
+
+**Eza**
+
 Install eza (better ls) - eza is a better version of ls with lots of different options:
 ```bash
 brew install eza
 ```
 
-Zoxide 
+**Zoxide**
+
 Zoxide is a replacement for cd. It remembers the directories you've been in, so you can more easily jump to them next time. Say you do cd ~/.local/share/omakub once. Next time, you can just do cd omakub, and Zoxide will take you directly there.
 ```bash
 brew install zoxide
@@ -63,7 +66,7 @@ brew install zoxide
 
 ## Thanks To
 
-I got inspiration from [Typecraft Dev](https://github.com/typecraft-dev/dotfiles) and [Dries Vints](https://github.com/driesvints/dotfiles). Also visit the [GitHub does dotfiles](https://dotfiles.github.io/) project.
+I got inspiration from [Typecraft Dev](https://github.com/typecraft-dev/dotfiles), [Josean Martinez](https://github.com/josean-dev/dev-environment-files) and [Dries Vints](https://github.com/driesvints/dotfiles). Also visit the [GitHub does dotfiles](https://dotfiles.github.io/), [Omachy by DHH](https://omarchy.org/) and [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim) projects.
 
 
 In general, I'd like to thank every single one who open-sources their dotfiles for their effort to contribute something to the open-source community.
