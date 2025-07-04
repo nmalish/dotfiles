@@ -156,6 +156,12 @@ vim.opt.cursorline = true
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
 
+-- File handling options
+vim.opt.autoread = true -- Automatically reload files changed outside Neovim
+vim.opt.swapfile = false -- Disable swap files
+vim.opt.backup = false -- Disable backup files
+vim.opt.writebackup = false -- Disable write backup
+
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 
