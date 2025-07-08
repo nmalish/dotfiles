@@ -14,20 +14,19 @@ fi
 echo "Creating new tmux session: $SESSION_NAME"
 
 # Create session and first window (detached)
-tmux new-session -d -s "$SESSION_NAME" -n "dev"
+tmux new-session -d -s "$SESSION_NAME" -n "nvim"
 
-# Split window 0 into two panes
-tmux split-window -h -t "$SESSION_NAME:0"
+# Send nvim command to the first window
+tmux send-keys -t "$SESSION_NAME:1" "nvim ." Enter
 
-# Send nvim command to the left pane (pane 0)
-tmux send-keys -t "$SESSION_NAME:0.0" "nvim ." Enter
+# Create second window named "scripts"
+tmux new-window -t "$SESSION_NAME" -n "scripts"
 
-# Create second window named "claude"
+# Create third window named "claude"
 tmux new-window -t "$SESSION_NAME" -n "claude"
 
-# Select the first window and right pane (console)
-tmux select-window -t "$SESSION_NAME:0"
-tmux select-pane -t "$SESSION_NAME:0.1"
+# Select the scripts window (window 2)
+tmux select-window -t "$SESSION_NAME:2"
 
 # Attach to the session
 tmux attach-session -t "$SESSION_NAME"
