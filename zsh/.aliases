@@ -14,6 +14,21 @@ alias gc='git commit'
 alias gp='git push'
 alias gl='git log --oneline'
 
+# .NET
+alias d='dotnet'
+alias db='dotnet build'
+alias dr='dotnet run'
+alias dt='dotnet test'
+alias ds='dotnet restore'
+alias dp='dotnet publish'
+alias dw='dotnet watch'
+alias dwr='dotnet watch run'
+alias dwt='dotnet watch test'
+alias dn='dotnet new'
+alias da='dotnet add'
+alias drm='dotnet remove'
+
+
 # Shell Tools
 alias cd='z'
 
