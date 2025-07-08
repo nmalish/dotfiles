@@ -121,3 +121,7 @@ export PATH="$HOME/.local/bin:$PATH"
 
 # Zoxide
 eval "$(zoxide init zsh)"
+
+# ---- Secrets ----
+source ~/.env_secrets
+
