@@ -399,12 +399,41 @@ require('lazy').setup({
         -- You can put your default mappings / updates / etc. in here
         --  All the info you're looking for is in `:help telescope.setup()`
         --
-        -- defaults = {
-        --   mappings = {
-        --     i = { ['<c-enter>'] = 'to_fuzzy_refine' },
-        --   },
-        -- },
-        -- pickers = {}
+        defaults = {
+          -- Follow symlinks when searching files
+          follow_symlinks = true,
+          -- Use ripgrep with symlink following for live grep
+          vimgrep_arguments = {
+            'rg',
+            '--color=never',
+            '--no-heading',
+            '--with-filename',
+            '--line-number',
+            '--column',
+            '--smart-case',
+            '--follow', -- Follow symlinks
+          },
+          -- Custom find command that follows symlinks
+          find_command = { 'rg', '--files', '--hidden', '--follow' },
+          mappings = {
+            i = { ['<c-enter>'] = 'to_fuzzy_refine' },
+          },
+        },
+        pickers = {
+          find_files = {
+            -- Additional find_files configuration
+            follow_symlinks = true,
+            hidden = true,
+            -- Force find_files to use ripgrep with symlink following
+            find_command = { 'rg', '--files', '--follow' },
+          },
+          live_grep = {
+            -- Additional live_grep configuration
+            additional_args = function()
+              return { '--follow' }
+            end,
+          },
+        },
         extensions = {
           ['ui-select'] = {
             require('telescope.themes').get_dropdown(),
@@ -422,7 +451,12 @@ require('lazy').setup({
       vim.keymap.set('n', '<leader>sk', builtin.keymaps, { desc = '[S]earch [K]eymaps' })
       vim.keymap.set('n', '<leader>sf', builtin.find_files, { desc = '[S]earch [F]iles' })
       vim.keymap.set('n', '<leader>sa', function()
-        builtin.find_files { hidden = true, no_ignore = true }
+        builtin.find_files { 
+          hidden = true, 
+          follow_symlinks = true,
+          -- Ignore .gitignore files but exclude common unwanted directories
+          find_command = { 'rg', '--files', '--hidden', '--follow', '--no-ignore', '--glob', '!.git', '--glob', '!node_modules' }
+        }
       end, { desc = '[S]earch [A]ll files' })
       vim.keymap.set('n', '<leader>ss', builtin.builtin, { desc = '[S]earch [S]elect Telescope' })
       vim.keymap.set('n', '<leader>sw', builtin.grep_string, { desc = '[S]earch current [W]ord' })
@@ -459,6 +493,13 @@ require('lazy').setup({
       vim.keymap.set('n', '<leader>so', function()
         builtin.find_files { cwd = os.getenv 'OBSIDIAN_PATH' }
       end, { desc = '[S]earch [O]bsidian files' })
+
+      -- Shortcut for searching workspace files (follows symlinks)
+      vim.keymap.set('n', '<leader>sw', function()
+        print 'searching workspace 1'
+        local workspace_path = os.getenv 'WORKSPACE_PATH' or vim.fn.expand '~/Repos/ninja-workspace'
+        builtin.find_files { cwd = workspace_path }
+      end, { desc = '[S]earch [W]orkspace files' })
     end,
   },
 
