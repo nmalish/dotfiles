@@ -154,13 +154,26 @@ vim.opt.inccommand = 'split'
 vim.opt.cursorline = true
 
 -- Minimal number of screen lines to keep above and below the cursor.
-vim.opt.scrolloff = 10
+vim.opt.scrolloff = 20
 
 -- File handling options
 vim.opt.autoread = true -- Automatically reload files changed outside Neovim
 vim.opt.swapfile = false -- Disable swap files
 vim.opt.backup = false -- Disable backup files
 vim.opt.writebackup = false -- Disable write backup
+
+-- test config
+vim.opt.tabstop = 4
+vim.opt.softtabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.expandtab = true
+vim.opt.smartindent = true
+vim.opt.wrap = false
+vim.opt.undodir = os.getenv 'HOME' .. '/.vim/undodir'
+vim.opt.hlsearch = false
+vim.opt.incsearch = true
+vim.opt.termguicolors = true
+vim.opt.isfname:append '@-@'
 
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
@@ -452,11 +465,11 @@ require('lazy').setup({
       vim.keymap.set('n', '<leader>sk', builtin.keymaps, { desc = '[S]earch [K]eymaps' })
       vim.keymap.set('n', '<leader>sf', builtin.find_files, { desc = '[S]earch [F]iles' })
       vim.keymap.set('n', '<leader>sa', function()
-        builtin.find_files { 
-          hidden = true, 
+        builtin.find_files {
+          hidden = true,
           follow_symlinks = true,
           -- Ignore .gitignore files but exclude common unwanted directories
-          find_command = { 'rg', '--files', '--hidden', '--follow', '--no-ignore', '--glob', '!.git', '--glob', '!node_modules' }
+          find_command = { 'rg', '--files', '--hidden', '--follow', '--no-ignore', '--glob', '!.git', '--glob', '!node_modules' },
         }
       end, { desc = '[S]earch [A]ll files' })
       vim.keymap.set('n', '<leader>ss', builtin.builtin, { desc = '[S]earch [S]elect Telescope' })
