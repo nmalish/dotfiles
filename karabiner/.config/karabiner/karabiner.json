@@ -70,6 +70,7 @@
                     },
                     {
                         "description": "Left Shift → F13 when tapped, normal Shift when held",
+                        "enabled": false,
                         "manipulators": [
                             {
                                 "from": {
