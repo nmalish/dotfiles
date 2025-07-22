@@ -437,7 +437,7 @@ require('lazy').setup({
           find_files = {
             -- Additional find_files configuration
             follow_symlinks = true,
-            hidden = true,
+            -- hidden = true,
             -- Force find_files to use ripgrep with symlink following
             find_command = { 'rg', '--files', '--follow' },
           },
@@ -507,13 +507,6 @@ require('lazy').setup({
       vim.keymap.set('n', '<leader>so', function()
         builtin.find_files { cwd = os.getenv 'OBSIDIAN_PATH' }
       end, { desc = '[S]earch [O]bsidian files' })
-
-      -- Shortcut for searching workspace files (follows symlinks)
-      vim.keymap.set('n', '<leader>sw', function()
-        print 'searching workspace 1'
-        local workspace_path = os.getenv 'WORKSPACE_PATH' or vim.fn.expand '~/Repos/ninja-workspace'
-        builtin.find_files { cwd = workspace_path }
-      end, { desc = '[S]earch [W]orkspace files' })
     end,
   },
 
