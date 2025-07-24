@@ -42,9 +42,9 @@ fix: resolve memory leak in data processing
 ## Context Commands
 
 Before creating the commit message, gather context with:
-- `git status`
-- `git diff --staged` (or `git diff` if nothing staged)
-- `git branch --show-current` 
-- `git log --oneline -3` (recent commits for context)
+- `git status` (file count and types)
+- `git diff --staged --stat` (line counts)
+- `git diff --staged` (actual changes)
+- `git log --oneline -3` (recent commit style)
 
 Focus on creating professional, clear commit messages that accurately describe the changes in one concise sentence without any AI attribution.
