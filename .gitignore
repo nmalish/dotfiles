@@ -1,3 +1,5 @@
 karabiner/.config/karabiner/automatic_backups
 
 .env*
+.claude/settings.local.json
+claude/.claude/mcp_servers.json
