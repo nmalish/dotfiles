@@ -346,12 +346,28 @@ require('lazy').setup({
       spec = {
         { '<leader>c', group = '[C]ode', mode = { 'n', 'x' } },
         { '<leader>d', group = '[D]ocument' },
+        { '<leader>e', group = '[E]xplorer' },
+        { '<leader>n', group = '[N]vimTree Actions' },
         { '<leader>r', group = '[R]ename' },
         { '<leader>s', group = '[S]earch' },
         { '<leader>w', group = '[W]orkspace' },
         { '<leader>t', group = '[T]oggle' },
         { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
         { '<leader>u', desc = 'Toggle [U]ndo tree' },
+
+        -- NvimTree general keymaps
+        { '<leader>e', '<cmd>NvimTreeToggle<cr>', desc = 'Toggle file explorer' },
+        { '<leader>ef', '<cmd>NvimTreeFindFileToggle<cr>', desc = 'Find current file in explorer' },
+        { '<leader>er', '<cmd>NvimTreeRefresh<cr>', desc = 'Refresh file explorer' },
+        { '<leader>ec', '<cmd>NvimTreeCollapse<cr>', desc = 'Collapse all folders' },
+        {
+          '<leader>e?',
+          function()
+            local api = require 'nvim-tree.api'
+            api.tree.toggle_help()
+          end,
+          desc = 'Show NvimTree help',
+        },
       },
     },
   },
