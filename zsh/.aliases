@@ -36,5 +36,6 @@ alias cd='z'
 alias repos='cd ~/Repos'
 alias projects='cd ~/Projects'
 alias dev='tmux-dev-session.sh'
+alias wt='tmux-worktree-session.sh' 
 
 
