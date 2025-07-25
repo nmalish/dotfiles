@@ -59,6 +59,24 @@ fi
 echo -e "${GREEN}Creating git worktree for branch '$BRANCH_NAME'...${NC}"
 git worktree add "$WORKTREE_PATH" -b "$BRANCH_NAME"
 
+# Copy Claude-related files from the original repository
+echo -e "${GREEN}Copying Claude configuration files...${NC}"
+ORIGINAL_REPO=$(git rev-parse --show-toplevel)
+
+# Copy .claude/settings.local.json if it exists
+if [[ -f "$ORIGINAL_REPO/.claude/settings.local.json" ]]; then
+    mkdir -p "$WORKTREE_PATH/.claude"
+    cp "$ORIGINAL_REPO/.claude/settings.local.json" "$WORKTREE_PATH/.claude/"
+    echo -e "${GREEN}✓ Copied .claude/settings.local.json${NC}"
+fi
+
+# Copy claude/.claude/mcp_servers.json if it exists
+if [[ -f "$ORIGINAL_REPO/claude/.claude/mcp_servers.json" ]]; then
+    mkdir -p "$WORKTREE_PATH/claude/.claude"
+    cp "$ORIGINAL_REPO/claude/.claude/mcp_servers.json" "$WORKTREE_PATH/claude/.claude/"
+    echo -e "${GREEN}✓ Copied claude/.claude/mcp_servers.json${NC}"
+fi
+
 # Change to the worktree directory
 cd "$WORKTREE_PATH"
 
