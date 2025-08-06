@@ -42,4 +42,6 @@ alias dev='tmux-dev-session.sh'
 alias wt='tmux-worktree-session.sh'
 alias wtc='tmux-worktree-cleanup.sh' 
 
+# claude code
+alias claude="/Users/nmalysh/.claude/local/claude"
 
