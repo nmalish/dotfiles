@@ -1,5 +1,26 @@
 {
-  "model": "sonnet",
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:docs.anthropic.com)",
+      "Bash(git add:*)",
+      "Bash(git diff:*)",
+      "Bash(ls:*)",
+      "Bash(rg:*)",
+      "Bash(cat:*)",
+      "WebFetch(domain:github.com)",
+      "Bash(plutil:*)",
+      "WebFetch(domain:alacritty.org)",
+      "Bash(dotnet --version)",
+      "ReadFile:*",
+      "EditFile:*",
+      "Bash(nvim:*)",
+      "Bash(find:*)"
+    ],
+    "deny": [
+      "Bash(rm -rf:*)",
+      "Bash(sudo *)"
+    ]
+  },
   "hooks": {
     "PreToolUse": [
       {
@@ -32,5 +53,7 @@
         ]
       }
     ]
-  }
+  },
+  "model": "opus"
 }
+
