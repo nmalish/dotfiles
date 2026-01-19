@@ -125,3 +125,21 @@ eval "$(zoxide init zsh)"
 # ---- Secrets ----
 source ~/.env_secrets
 
+
+# Added by Antigravity
+export PATH="/Users/nmalysh/.antigravity/antigravity/bin:$PATH"
+
+# bun completions
+[ -s "/Users/nmalysh/.bun/_bun" ] && source "/Users/nmalysh/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+# Android
+export ANDROID_HOME="$HOME/Library/Android/sdk"
+export PATH="$ANDROID_HOME/platform-tools:$PATH"
+export JAVA_HOME="/opt/homebrew/opt/openjdk@21"
+export PATH="$JAVA_HOME/bin:$PATH"
+
+
