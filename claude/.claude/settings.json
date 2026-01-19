@@ -1,59 +1,19 @@
 {
   "permissions": {
     "allow": [
-      "WebFetch(domain:docs.anthropic.com)",
-      "Bash(git add:*)",
-      "Bash(git diff:*)",
+      "Bash(dotnet build)",
+      "WebFetch(domain:chillicream.com)",
+      "Bash(find:*)",
+      "mcp__atlassian-remote__getAccessibleAtlassianResources",
+      "mcp__atlassian-remote__getJiraIssue",
       "Bash(ls:*)",
-      "Bash(rg:*)",
-      "Bash(cat:*)",
-      "WebFetch(domain:github.com)",
-      "Bash(plutil:*)",
-      "WebFetch(domain:alacritty.org)",
-      "Bash(dotnet --version)",
-      "ReadFile:*",
-      "EditFile:*",
-      "Bash(nvim:*)",
-      "Bash(find:*)"
+      "WebSearch"
     ],
-    "deny": [
-      "Bash(rm -rf:*)",
-      "Bash(sudo *)"
-    ]
+    "deny": [],
+    "defaultMode": "plan"
   },
-  "hooks": {
-    "PreToolUse": [
-      {
-        "matcher": "Bash",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "osascript -e 'display notification \"Claude Code requesting permission to execute command\" with title \"Claude Code Permission Request\" sound name \"Glass\"'"
-          }
-        ]
-      },
-      {
-        "matcher": "Bash",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "check-commit-message.sh"
-          }
-        ]
-      }
-    ],
-    "Notification": [
-      {
-        "matcher": "",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "osascript -e 'display notification \"Claude Code is waiting for input\" with title \"Claude Code Idle\" sound name \"Ping\"'"
-          }
-        ]
-      }
-    ]
+  "enabledPlugins": {
+    "clangd-lsp@claude-plugins-official": true
   },
-  "model": "opus"
+  "model": "sonnet"
 }
-
