@@ -64,6 +64,33 @@ Zoxide is a replacement for cd. It remembers the directories you've been in, so 
 brew install zoxide
 ```
 
+### Claude Code Integration
+
+This repository includes Claude Code configuration and hooks for enhanced AI-assisted development workflow.
+
+**Location**: `claude/.claude/`
+
+**Features**:
+- **Native macOS Notifications**: Get notified when Claude Code needs input or finishes tasks
+- **Project-aware**: Notifications include the current project name (useful for parallel tmux sessions)
+- **Custom Agents**: Specialized agents for BMAD methodology, Jira integration, and development workflows
+- **MCP Servers**: Bitbucket integration for repository operations
+
+**Notification Hooks**:
+- **Input needed**: Plays "Ping" sound when Claude Code requires your attention
+- **Task completed**: Plays "Glass" sound when Claude Code finishes processing
+- Format: "Claude Code - [ProjectName]"
+
+**After modifying Claude Code configuration**:
+```bash
+# Re-stow to update symlinks
+stow -R claude
+
+# Restart Claude Code for hooks to take effect
+```
+
+**Note**: Hook scripts use native AppleScript (no external dependencies required).
+
 ## Thanks To
 
 I got inspiration from [Typecraft Dev](https://github.com/typecraft-dev/dotfiles), [Josean Martinez](https://github.com/josean-dev/dev-environment-files) and [Dries Vints](https://github.com/driesvints/dotfiles). Also visit the [GitHub does dotfiles](https://dotfiles.github.io/), [Omachy by DHH](https://omarchy.org/) and [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim) projects.

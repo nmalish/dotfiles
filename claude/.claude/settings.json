@@ -2,12 +2,22 @@
   "permissions": {
     "allow": [
       "Bash(dotnet build)",
-      "WebFetch(domain:chillicream.com)",
+      "Bash(npm init:*)",
+      "Bash(npm install:*)",
+      "Bash(npm run build:*)",
+      "Bash(npm run dev:*)",
+      "Bash(npm uninstall:*)",
+      "Bash(npm create:*)",
       "Bash(find:*)",
+      "Bash(grep:*)",
+      "Bash(ls:*)",
+      "WebFetch(domain:chillicream.com)",
+      "WebFetch(domain:docs.anthropic.com)",
+      "WebFetch(domain:docs.claude.com)",
+      "WebSearch",
       "mcp__atlassian-remote__getAccessibleAtlassianResources",
       "mcp__atlassian-remote__getJiraIssue",
-      "Bash(ls:*)",
-      "WebSearch"
+      "mcp__atlassian-remote__searchJiraIssuesUsingJql"
     ],
     "deny": [],
     "defaultMode": "plan"
@@ -15,5 +25,27 @@
   "enabledPlugins": {
     "clangd-lsp@claude-plugins-official": true
   },
-  "model": "sonnet"
+  "model": "sonnet",
+  "hooks": {
+    "Notification": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/notification.sh"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/stop.sh"
+          }
+        ]
+      }
+    ]
+  }
 }
