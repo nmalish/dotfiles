@@ -33,7 +33,7 @@ alias drm='dotnet remove'
 
 
 # Shell Tools
-alias cd='z'
+# alias cd='z'  # Commented out - zoxide not initialized
 
 # Custom
 alias repos='cd ~/Repos'

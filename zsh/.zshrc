@@ -120,7 +120,10 @@ alias ls="eza --icons=always"
 export PATH="$HOME/.local/bin:$PATH"
 
 # Zoxide
-eval "$(zoxide init zsh)"
+#eval "$(zoxide init zsh)"
+
+# ---- Aliases ----
+[[ -f ~/.aliases ]] && source ~/.aliases
 
 # ---- Secrets ----
 source ~/.env_secrets
