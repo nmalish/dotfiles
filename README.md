@@ -57,13 +57,6 @@ Install eza (better ls) - eza is a better version of ls with lots of different o
 brew install eza
 ```
 
-**Zoxide**
-
-Zoxide is a replacement for cd. It remembers the directories you've been in, so you can more easily jump to them next time. Say you do cd ~/.local/share/omakub once. Next time, you can just do cd omakub, and Zoxide will take you directly there.
-```bash
-brew install zoxide
-```
-
 ### Claude Code Integration
 
 This repository includes Claude Code configuration and hooks for enhanced AI-assisted development workflow.
