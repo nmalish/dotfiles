@@ -30,6 +30,7 @@ alias dwt='dotnet watch test'
 alias dn='dotnet new'
 alias da='dotnet add'
 alias drm='dotnet remove'
+alias dotnet-install='~/dotfiles/setup/dotnet-install.sh'
 
 
 # Custom
