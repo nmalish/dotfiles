@@ -20,7 +20,7 @@
       "mcp__atlassian-remote__searchJiraIssuesUsingJql"
     ],
     "deny": [],
-    "defaultMode": "plan"
+    "defaultMode": "auto"
   },
   "hooks": {
     "Notification": [
@@ -42,10 +42,35 @@
           }
         ]
       }
+    ],
+    "WorktreeCreate": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/worktree-create.sh"
+          }
+        ]
+      }
+    ],
+    "WorktreeRemove": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/worktree-remove.sh"
+          }
+        ]
+      }
     ]
   },
   "enabledPlugins": {
     "clangd-lsp@claude-plugins-official": true,
     "csharp-lsp@claude-plugins-official": true
-  }
+  },
+  "effortLevel": "medium",
+  "editorMode": "vim",
+  "preferredNotifChannel": "terminal_bell",
+  "autoCompactEnabled": false,
+  "skipAutoPermissionPrompt": true
 }
